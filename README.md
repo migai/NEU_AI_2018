@@ -12,13 +12,21 @@ For Python installation, we highly recommend the use of Anaconda package manager
 2.	Follow instructions on the Anaconda site to ensure you are running Python 3.6 
 (other versions may not be compatible with the machine learning packages we will use) 
 Note that it is possible to downgrade (or upgrade) your Python version after you have installed the Anaconda environment and package manager.
-3.	Download “python_packages.txt” from here:
- https://github.com/migai/neu_AI_2018
+3.	##### Install Python Packages for the AI Course
+Download **python_packages.txt** from here: [https://github.com/migai/neu_AI_2018]
 4.	Open a terminal on Mac/Linux, or the special “Anaconda Prompt” command shell in the Windows Start Menu and run the following commands:
+```
 conda config --append channels conda-forge
 conda config --append channels menpo
 conda install --yes --file python_packages.txt
-5.	Open the “Anaconda Navigator” and from the “Environments” tab on the left, you can check the proper installation and versions of all the packages and of your Python itself.
-From the “Home” tab in Anaconda Navigator, you can open an instance of Jupyter (browser-based Python) or Spyder (a conventional IDE with debug capabilities).
-6.	Try running a “hello, world” print program from Jupyter or Spyder to make sure you know how to run Python.  You need just a single line in your program:
+```
+5.	##### Check Your Package Installation with **Anaconda Navigator**
+Open the **Anaconda Navigator** executable you just installed.  On the left, you can select "Environments" to check the proper installation and versions of all the packages.  Be sure your Python is a version of 3.6 and not 3.7!
+6. ##### Open a Python IDE
+By selecting “Home” from the left side of **Anaconda Navigator**, you should be able to open an instance of Jupyter (browser-based Python) or Spyder (a conventional IDE with debug capabilities).  Either one is fine for your work in this course.  Jupyter will allow you to better describe your programs to the graders, but Spyder can be more flexible and familiar to you.
+7.	##### Check that You Can Run Python
+Try running a *“hello, world”* print program from your preferred environment (Jupyter or Spyder, for example) to make sure you can run Python.  You need just a single line in your program:
+```python
 print(“hello, world”)
+```
+:checkered_flag:
