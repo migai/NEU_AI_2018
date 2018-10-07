@@ -21,12 +21,11 @@ Note that it is possible to change your Python version after you have installed 
   *Download **python_packages.txt** from here: [https://github.com/migai/neu_AI_2018]
   
   *Open a terminal on Mac/Linux, or using the special “Anaconda Prompt” command shell in the Windows Start Menu, run the following commands:
-  
-      ```
-      conda config --append channels conda-forge
-      conda config --append channels menpo
-      conda install --yes --file python_packages.txt
-      ```
+  ```bash
+  conda config --append channels conda-forge
+  conda config --append channels menpo
+  conda install --yes --file python_packages.txt
+  ```
       
 4.	##### Check Your Package Installation with **Anaconda Navigator**
 Open the **Anaconda Navigator** executable you just installed.  On the left, you can select "Environments" to check the proper installation and versions of all the packages.  Be sure your Python is a version of 3.6 and not 3.7!
