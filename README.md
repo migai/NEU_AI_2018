@@ -10,9 +10,10 @@ For Python installation, we highly recommend the use of the **Anaconda** package
 1.	##### Install the **Anaconda** Package Manager
 Download and install Anaconda for Windows/Mac/Linux here:  [https://www.anaconda.com/download/]
 
-2.	##### Verify You are Using Python 3.6.x
 Follow instructions from the Anaconda download site to ensure you are running **Python 3.6.x**
-(Python 3.7 is not yet verified with some of the machine learning software we will use.  Earlier versions of Python may not work properly when assignments are being graded.) 
+(Python 3.7 is not yet verified with some of the machine learning software we will use.  Also, earlier versions of Python may not work properly when assignments are being graded.) 
+
+2.	##### Verify You are Using Python 3.6.x
 Note that it is possible to change your Python version after you have installed the Anaconda environment and package manager. If you find that you do not have Python 3.6.x running in your environment, use Anaconda to downgrade or upgrade as needed.  (Use the "Environments" link at the left side of the **Anaconda Navigator** executable.)
 *Make sure you are using Python 3.6.x **before** you continue with the following steps.*
 
