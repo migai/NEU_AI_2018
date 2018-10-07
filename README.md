@@ -20,7 +20,8 @@ Note that it is possible to change your Python version after you have installed 
 3.	#### Install Python Packages for the AI Course
   *Download **python_packages.txt** from here: [https://github.com/migai/neu_AI_2018]
   
-  *Open a terminal on Mac/Linux, or using the special “Anaconda Prompt” command shell in the Windows Start Menu, run the following commands:
+  *Open a terminal on Mac/Linux, or use the special “Anaconda Prompt” command shell in the Windows Start Menu.
+  Run the following commands:
   ```bash
   conda config --append channels conda-forge
   conda config --append channels menpo
