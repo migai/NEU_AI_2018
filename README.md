@@ -1,4 +1,4 @@
-![AI Logo](https://github.com/migai/neu_AI_2018/blob/master/AI_Logo_Large.jpg "AI Logo")# neu_AI_2018
+![AI Logo](https://github.com/migai/neu_AI_2018/blob/master/AI_Logo.jpg "AI Logo") # neu_AI_2018
 ## Python 3.6 Environment Setup and Test Program
 
 You will need a computer with at least 4GB of RAM.  Faster CPUs and especially GPUs can help accelerate some of the machine learning algorithms we will be using, so it is recommended that you install Python and work on the fastest machine you have available.  *If you have any difficulties with the following two tasks, it is expected that you will interact with the course TA **before** the first day of class.*
