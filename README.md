@@ -2,7 +2,9 @@
 ## Python 3.6 Environment Setup and Test Program
 
 You will need a computer with at least 4GB of RAM.  Faster CPUs and especially GPUs can help accelerate some of the machine learning algorithms we will be using, so it is recommended that you install Python and work on the fastest machine you have available.  *If you have any difficulties with the following two tasks, it is expected that you will interact with the course TA **before** the first day of class.*
+
 :heavy_exclamation_mark:1. *It is expected that you will have Python 3.6 running on your machine before the first day of class.*  (1 hour)
+
 :heavy_exclamation_mark:2. *It is expected that you will have written some simple Python code to demonstrate it is working before the first day of class.*  Your task will be to implement a simple version of Google’s Page Rank algorithm and **bring your results to class on the first day**.  Further instructions will be provided to help you. (1 to 3 hours, depending on your familiarity with Python)
 
 For Python installation, we highly recommend the use of the **Anaconda** package manager for its simplicity and known success with the packages to be used in our AI class.  You can use alternative installations of Python if you do not like Anaconda, but you may need to work with the course TA to ensure all associated packages are properly installed.  Instructions for **Anaconda** clean install are here:
