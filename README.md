@@ -1,20 +1,26 @@
 # neu_AI_2018
 ## Python 3.6 Environment Setup and Test Program
 
-You will need a computer with at least 4GB of RAM.  Faster CPUs and especially GPUs can help accelerate some of the machine learning algorithms we will be using, so it is recommended that you install Python and work on the fastest machine you have available.  Plan on spending approximately 1 hour to install the software, and 2 hours to complete the Page Rank task.  *It is expected that you will interact with the course TA before the first day of class, if you have any difficulties.*
-1. *It is expected that you will have Python 3.6 running on your machine before the first day of class.*
-2. *It is expected that you will have written some simple Python code to demonstrate it is working before the first day of class.*  Your task will be to implement a simple version of Google’s Page Rank algorithm and **bring your results to class on the first day**.  Further instructions will be provided to help you.
+You will need a computer with at least 4GB of RAM.  Faster CPUs and especially GPUs can help accelerate some of the machine learning algorithms we will be using, so it is recommended that you install Python and work on the fastest machine you have available.  *It is expected that you will interact with the course TA before the first day of class, if you have any difficulties.*
+1. *It is expected that you will have Python 3.6 running on your machine before the first day of class.*  (1 hour)
+2. *It is expected that you will have written some simple Python code to demonstrate it is working before the first day of class.*  Your task will be to implement a simple version of Google’s Page Rank algorithm and **bring your results to class on the first day**.  Further instructions will be provided to help you. (1 to 3 hours, depending on your familiarity with Python)
 
 For Python installation, we highly recommend the use of the **Anaconda** package manager for its simplicity and known success with the packages to be used in our AI class.  You can use alternative installations of Python if you do not like Anaconda, but you may need to work with the course TA to ensure all associated packages are properly installed.  Instructions for **Anaconda** clean install are here:
 
-1.	Download and install Anaconda for Windows/Mac/Linux here:  [https://www.anaconda.com/download/]
+1.	##### Install the **Anaconda** Package Manager
+Download and install Anaconda for Windows/Mac/Linux here:  [https://www.anaconda.com/download/]
 
-2.	Follow instructions on the Anaconda site to ensure you are running **Python 3.6.x**
-(Python 3.7 is not yet verified with some of the machine learning software we will use.  Earlier versions of Python may not work properly when assignments are being graded.) Note that it is possible to downgrade (or upgrade) your Python version after you have installed the Anaconda environment and package manager. *Make sure you are using Python 3.6.x before you continue with the following steps.*
+2.	##### Verify You are Using Python 3.6.x
+Follow instructions from the Anaconda download site to ensure you are running **Python 3.6.x**
+(Python 3.7 is not yet verified with some of the machine learning software we will use.  Earlier versions of Python may not work properly when assignments are being graded.) 
+Note that it is possible to change your Python version after you have installed the Anaconda environment and package manager. If you find that you do not have Python 3.6.x running in your environment, use Anaconda to downgrade or upgrade as needed.  (Use the "Environments" link at the left side of the **Anaconda Navigator** executable.)
+*Make sure you are using Python 3.6.x **before** you continue with the following steps.*
 
 3.	##### Install Python Packages for the AI Course
-  Download **python_packages.txt** from here: [https://github.com/migai/neu_AI_2018]
-  Open a terminal on Mac/Linux, or the special “Anaconda Prompt” command shell in the Windows Start Menu and run the following commands:
+  *Download **python_packages.txt** from here: [https://github.com/migai/neu_AI_2018]
+  
+  *Open a terminal on Mac/Linux, or using the special “Anaconda Prompt” command shell in the Windows Start Menu, run the following commands:
+  
       ```
       conda config --append channels conda-forge
       conda config --append channels menpo
