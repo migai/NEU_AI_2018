@@ -1,4 +1,4 @@
-![AI Logo](https://github.com/migai/neu_AI_2018/blob/master/AI_Logo.jpg "AI Logo") 
+![AI Logo](https://github.com/migai/neu_AI_2018/blob/master/2018_NEU_AI_Banner.jpg "AI Logo") 
 # NEU AI 2018
 ## Python 3.6 Environment Setup and Test Program
 
@@ -10,17 +10,17 @@ You will need a computer with at least 4GB of RAM.  Faster CPUs and especially G
 
 For Python installation, we highly recommend the use of the **Anaconda** package manager for its simplicity and known success with the packages to be used in our AI class.  You can use alternative installations of Python if you do not like Anaconda, but you may need to work with the course TA to ensure all associated packages are properly installed.  Instructions for **Anaconda** clean install are here:
 
-1.	#### Install the **Anaconda** Package Manager
+1.	### Install the **Anaconda** Package Manager
 Download and install Anaconda for Windows/Mac/Linux here:  [https://www.anaconda.com/download/]
 
 Follow instructions from the Anaconda download site to ensure you are running **Python 3.6.x**
 (Python 3.7 is not yet verified with some of the machine learning software we will use.  Also, earlier versions of Python may not work properly when assignments are being graded.) 
 
-2.	#### Verify You are Using Python 3.6.x
+2.	### Verify You are Using Python 3.6.x
 Note that it is possible to change your Python version after you have installed the Anaconda environment and package manager. If you find that you do not have Python 3.6.x running in your environment, use Anaconda to downgrade or upgrade as needed.  (Use the "Environments" link at the left side of the **Anaconda Navigator** executable.)
 *Make sure you are using Python 3.6.x **before** you continue with the following steps.*
 
-3.	#### Install Python Packages for the AI Course
+3.	### Install Python Packages for the AI Course
   *Download **python_packages.txt** from here: [https://github.com/migai/neu_AI_2018]
   
   *Open a terminal on Mac/Linux, or use the special “Anaconda Prompt” command shell in the Windows Start Menu.
@@ -32,13 +32,13 @@ Note that it is possible to change your Python version after you have installed 
   conda install --yes --file python_packages.txt
   ```
       
-4.	#### Check Your Package Installation with **Anaconda Navigator**
+4.	### Check Your Package Installation with **Anaconda Navigator**
 Open the **Anaconda Navigator** executable you just installed.  On the left, you can select "Environments" to check the proper installation and versions of all the packages.  Be sure your Python is a version of 3.6 and not 3.7!
 
-5. #### Open a Python IDE
+5. ### Open a Python IDE
 By selecting “Home” from the left side of **Anaconda Navigator**, you should be able to open an instance of Jupyter (browser-based Python) or Spyder (a conventional IDE with debug capabilities).  Either one is fine for your work in this course.  Jupyter will allow you to better describe your programs to the graders, but Spyder can be more flexible and familiar to you.
 
-6.	#### Check that You Can Run Python
+6.	### Check that You Can Run Python
 Try running a *“hello, world”* print program from your preferred environment (Jupyter or Spyder, for example) to make sure you can run Python.  You need just a single line in your program:
 ```python
 print(“hello, world”)
