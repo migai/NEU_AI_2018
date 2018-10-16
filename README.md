@@ -17,6 +17,7 @@ Download and install Anaconda for Windows/Mac/Linux here:  [https://www.anaconda
 Follow instructions from the Anaconda download site to ensure you are running **Python 3.6.x** or **Python 3.7.x**
 (Earlier versions of Python may not work properly when assignments are being graded.) 
 
+
 ### 2. Verify You are Using Python 3.6.x or 3.7.x
 *Make sure you are using Python 3.6.x **before** you continue with the following steps.*
 *Open a terminal on Mac/Linux, or use the special “Anaconda Prompt” command shell in the Windows Start Menu.
