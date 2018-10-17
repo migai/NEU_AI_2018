@@ -12,7 +12,7 @@ ASSIGNMENT PART 1:  CHECK PYTHON INSTALLATION
 #   python add-on packages that we will use during the AI course.
 
 # First, we will import the packages so we have access to query their
-#  version numbers, then we will insert code to print out each package's version.
+#  version numbers, then we insert code to print out each package's version.
 #  Some of the packages will be used in the PageRank assignment, and some will
 #  only be used to check on version number.
 
@@ -30,8 +30,8 @@ import scipy           # scientific functions that you might not find in numpy
 import statsmodels     # additional statistics functionality
 import tqdm            # python utility for timing and function progress
 
-# The pip and sys packages should come pre-installed with your version of python
-import pip             # python package installer to extend python functionality
+# The pip and sys packages should come pre-installed with your python
+import pip             # python package installer
 import sys             # sys provides some additional operating system access
 print("Path to my active Python executable: " + sys.executable)
 print("0. Python version: " + sys.version)
@@ -49,30 +49,47 @@ print("10. statsmodels version " + statsmodels.__version__)
 print("11. tqdm version " + tqdm.__version__)
 
 
+def make_network(network_nodes, student_id=20161234, n_nodes=5, maxlinks=4):
+    """Create a randomized network for PageRank evaluation."""
+    
+    # We use the student name and ID to create a randomized network for
+    #  computing page rank (random so every student's answer will be different)
+    network_nodes = network_nodes.upper().replace(" ","")
+    if len(network_nodes) < 6:
+        network_nodes = network_nodes + "PAGERANK"
+    network_nodes = list(set(network_nodes))[:n_nodes]
+    node_dict = {key:val for key,val in enumerate(network_nodes)}
+    
+    import random
+    random.seed(student_id)
+    n_links = list(range(1,maxlinks+1))
+    n_inlinks = random.choices(n_links, k=len(network_nodes))
+    n_outlinks = random.sample(n_inlinks, k=len(network_nodes))
+    
+    N = nx.generators.degree_seq.directed_havel_hakimi_graph(
+            n_inlinks, n_outlinks)
+    N = nx.relabel_nodes(N,node_dict)
+    nodes = list(N.nodes())
+    links = list(N.edges())
+    pr = nx.pagerank(N)
+    return nodes, links, N, pr
+
+
+
 '''
 ASSIGNMENT PART 2:  PAGERANK
 '''
 # 2.1 Create a network graph with nodes labeled with the letters of your name
 ### ENTER YOUR NAME HERE.  REMOVE MY NAME AND USE YOUR OWN NAME. ###
-network_nodes = "Michael Gaidis"
+### IT MUST BE AT LEAST 6 CHARACTERS ###
+student_name = "Michael Gaidis"
 ### ENTER YOUR STUDENT ID HERE ###
 student_id = 20161234
 
-network_nodes = network_nodes.upper().replace(" ","")
-network_nodes = sorted(list(set(network_nodes)))
-node_dict = {key:val for key,val in enumerate(network_nodes)}
 
-import random
-random.seed(student_id)
-n_links = list(range(1,5))
-n_inlinks = random.choices(n_links, k=len(network_nodes))
-n_outlinks = random.sample(n_inlinks, k=len(network_nodes))
 
-N = nx.generators.degree_seq.directed_havel_hakimi_graph(n_inlinks, n_outlinks)
-N = nx.relabel_nodes(N,node_dict)
-nx.drawing.nx_pylab.draw_networkx(N)
-nodes = list(N.nodes())
-links = list(N.edges())
+# Create the network
+nodes, links, network, pr_nx = make_network(student_name, student_id)
 n_nodes = len(nodes)
 
 # Count up the number of outlinks from every node
@@ -105,8 +122,19 @@ while not within_tolerance(tolerance,pagerank,pagerank_new):
         for il in inlinks[node]:
             pagerank_new[node] += (alpha * pagerank[il]/outlinks[il])
           
-pr_nx = nx.pagerank(N)
-
-print("Node\tPR_Calc\tPR_nx")
+pr_sum=0
+pr_max=max(pagerank_new)
+print(pr_max)
+print("\nNode\tPR-Calc\t\tPR-\u221E")
 for n in pagerank_new:
-    print(n + "\t" + str(round(pagerank_new[n],5)) + "\t" + str(round(pr_nx[n],5)))
+    # see, for example, https://mkaz.blog/code/python-string-format-cookbook/
+    print(" {}\t{:.5f}\t\t{:.5f}".format(n,pagerank_new[n],pr_nx[n]))
+
+
+print("\nSubmitted by '"+student_name+"' with student ID = " + str(student_id) + ".")
+import matplotlib.pyplot as plt
+nx.drawing.nx_pylab.draw_networkx(network, pos=nx.spring_layout(network),
+        font_size=14, font_weight='bold', 
+        node_size=800, node_color='lightblue',
+        edge_color='b', width = 1.5)
+plt.axis('off')
