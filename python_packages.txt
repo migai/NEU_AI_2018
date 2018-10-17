@@ -4,7 +4,6 @@ ipython
 ipywidgets
 jupyter
 jupyter_contrib_nbextensions
-keras
 matplotlib
 networkx
 nltk
@@ -12,10 +11,9 @@ numpy
 opencv
 pandas
 pip
-python
 scikit-image
 scikit-learn
 scipy
 spyder
-tensorflow
+statsmodels
 tqdm
