@@ -122,16 +122,11 @@ while not within_tolerance(tolerance,pagerank,pagerank_new):
         for il in inlinks[node]:
             pagerank_new[node] += (alpha * pagerank[il]/outlinks[il])
           
-pr_sum=0
-pr_max=max(pagerank_new)
-print(pr_max)
 print("\nNode\tPR-Calc\t\tPR-\u221E")
 for n in pagerank_new:
     # see, for example, https://mkaz.blog/code/python-string-format-cookbook/
     print(" {}\t{:.5f}\t\t{:.5f}".format(n,pagerank_new[n],pr_nx[n]))
 
-
-print("\nSubmitted by '"+student_name+"' with student ID = " + str(student_id) + ".")
 import matplotlib.pyplot as plt
 nx.drawing.nx_pylab.draw_networkx(network, pos=nx.spring_layout(network),
         font_size=14, font_weight='bold', 
