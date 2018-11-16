@@ -67,7 +67,8 @@ def make_network(network_nodes, student_id=20161234, n_nodes=5, maxlinks=4):
             n_links = list(range(1,maxlinks+1))
             n_inlinks = random.choices(n_links, k=len(network_nodes))
             n_outlinks = random.sample(n_inlinks, k=len(network_nodes))
-            N = assist(n_inlinks, n_outlinks)
+            N = nx.generators.degree_seq.directed_havel_hakimi_graph(
+            n_inlinks, n_outlinks)
             N = nx.relabel_nodes(N,node_dict)
             nodes = list(N.nodes())
             links = list(N.edges())
@@ -75,11 +76,6 @@ def make_network(network_nodes, student_id=20161234, n_nodes=5, maxlinks=4):
             return nodes, links, N, pr
         except BaseException as e:
             student_id = student_id * 10
-            
-def assist(n_inlinks, n_outlinks):
-        N = nx.generators.degree_seq.directed_havel_hakimi_graph(
-            n_inlinks, n_outlinks)
-        return N
 '''
 ASSIGNMENT PART 2:  PAGERANK
 '''
