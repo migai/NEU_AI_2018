@@ -59,23 +59,23 @@ def make_network(network_nodes, student_id=20161234, n_nodes=5, maxlinks=4):
         network_nodes = network_nodes + "PAGERANK"
     network_nodes = list(set(network_nodes))[:n_nodes]
     node_dict = {key:val for key,val in enumerate(network_nodes)}
-    
     import random
-    random.seed(student_id)
-    n_links = list(range(1,maxlinks+1))
-    n_inlinks = random.choices(n_links, k=len(network_nodes))
-    n_outlinks = random.sample(n_inlinks, k=len(network_nodes))
     
-    N = nx.generators.degree_seq.directed_havel_hakimi_graph(
+    while True:
+        try:
+            random.seed(student_id)
+            n_links = list(range(1,maxlinks+1))
+            n_inlinks = random.choices(n_links, k=len(network_nodes))
+            n_outlinks = random.sample(n_inlinks, k=len(network_nodes))
+            N = nx.generators.degree_seq.directed_havel_hakimi_graph(
             n_inlinks, n_outlinks)
-    N = nx.relabel_nodes(N,node_dict)
-    nodes = list(N.nodes())
-    links = list(N.edges())
-    pr = nx.pagerank(N)
-    return nodes, links, N, pr
-
-
-
+            N = nx.relabel_nodes(N,node_dict)
+            nodes = list(N.nodes())
+            links = list(N.edges())
+            pr = nx.pagerank(N)
+            return nodes, links, N, pr
+        except BaseException as e:
+            student_id = student_id * 10
 '''
 ASSIGNMENT PART 2:  PAGERANK
 '''
@@ -85,7 +85,6 @@ ASSIGNMENT PART 2:  PAGERANK
 student_name = "Michael Gaidis"
 ### ENTER YOUR STUDENT ID HERE ###
 student_id = 20161234
-
 
 
 # Create the network
