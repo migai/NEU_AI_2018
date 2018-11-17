@@ -2,6 +2,7 @@
 """
 Created on Sat Oct 13 08:38:00 2018
 @author: mgaidis
+Modified Nov. 17 to fix NetworkX error with some choices of random seed
 """
 
 '''
@@ -65,9 +66,8 @@ def make_network(network_nodes, student_id=20161234, n_nodes=5, maxlinks=4):
     n_links = list(range(1,maxlinks+1))
     n_inlinks = random.choices(n_links, k=len(network_nodes))
     n_outlinks = random.sample(n_inlinks, k=len(network_nodes))
-    
     N = nx.generators.degree_seq.directed_havel_hakimi_graph(
-            n_inlinks, n_outlinks)
+        n_inlinks, n_outlinks)
     N = nx.relabel_nodes(N,node_dict)
     nodes = list(N.nodes())
     links = list(N.edges())
@@ -84,12 +84,15 @@ ASSIGNMENT PART 2:  PAGERANK
 ### IT MUST BE AT LEAST 6 CHARACTERS ###
 student_name = "Michael Gaidis"
 ### ENTER YOUR STUDENT ID HERE ###
-student_id = 20161234
+student_id = 20164936
 
 
 
 # Create the network
-nodes, links, network, pr_nx = make_network(student_name, student_id)
+try:
+    nodes, links, network, pr_nx = make_network(student_name, student_id)
+except nx.NetworkXError:
+    nodes, links, network, pr_nx = make_network(student_name)
 n_nodes = len(nodes)
 
 # Count up the number of outlinks from every node
