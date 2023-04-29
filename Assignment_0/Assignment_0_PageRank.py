@@ -59,8 +59,8 @@ def make_network(network_nodes, student_id=20161234, n_nodes=5, maxlinks=4):
     if len(network_nodes) < 6:
         network_nodes = network_nodes + "PAGERANK"
     network_nodes = list(set(network_nodes))[:n_nodes]
-    node_dict = {key:val for key,val in enumerate(network_nodes)}
-    
+    node_dict = dict(enumerate(network_nodes))
+
     import random
     random.seed(student_id)
     n_links = list(range(1,maxlinks+1))
@@ -106,10 +106,7 @@ for l in links:
     inlinks[l[1]].append(l[0])
     
 def within_tolerance(tolerance,pr_old,pr_new):
-    for n in pr_old:
-        if abs(pr_new[n] - pr_old[n]) > tolerance:
-            return False
-    return True
+    return all(abs(pr_new[n] - pr_old[n]) <= tolerance for n in pr_old)
 
 pagerank = {key:0 for key in nodes}
 pagerank_new = {key: 1.0/n_nodes for key in nodes}
